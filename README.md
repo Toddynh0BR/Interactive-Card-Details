@@ -1,6 +1,6 @@
 
 # Interactive Card Details
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/MUHGYVT/Interactive-Card-Details/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Toddynh0BR/Interactive-Card-Details/blob/main/LICENSE) 
 
 ## About
 
@@ -44,9 +44,6 @@ Contributions are welcome! If you wish to contribute to the improvement of this 
 ## Author
 
 Matheus Augusto
-
-
-
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-augusto-a950672a1/)
 
