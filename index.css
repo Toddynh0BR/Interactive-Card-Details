@@ -1,0 +1,408 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+:root {
+ font-size: 62.5%;
+/*base-colors*/
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+/*primary-colors*/
+--Linear-gradient-active: linear-gradient(55deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 86%);
+--Red-input-errors: hsl(0, 100%, 66%);
+}
+
+body {
+font-size: 1.8rem;
+font-family: 'Space Grotesk', sans-serif;
+font-weight: 500;
+max-height:100vh ;
+overflow: hidden;
+}
+
+.hide {
+ display: none;
+}
+
+.bg-desk {
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100vh;
+ width: 30%;
+ background-image: url(assets/bg-desktop.png);
+ 
+}
+
+.card-front, .card-back {
+ box-shadow:  1.7rem 1.7rem 3.7rem  rgba(0,0,0,0.26);
+ border-radius: .9rem;
+ position: absolute;
+ z-index: 1;
+ width: 44.7rem;
+ height: 24.5rem; 
+ display: flex;
+}
+
+
+/*card-front*/
+.card-front {
+ left: 14rem;
+ top: 8rem;
+ background-image: url(assets/bg-card-front.png);
+ flex-direction: column;
+ gap: 3rem;
+}
+.logo {
+ margin-top: 2.5rem;
+ margin-left: 4rem;
+ width: 8.4rem;
+ height: 4.7rem;
+}
+#card-number {
+ color: var(--White);
+ font-size: 2.5rem;
+ font-weight: 400;
+ margin-left: 4rem;
+ letter-spacing: .4rem;
+}
+
+.ln {
+ display: flex;
+ flex-direction: column;
+
+ gap: 6.8rem;
+}
+
+.nn {
+ position: absolute;
+}
+#card-name {
+ position: relative;
+ top: 19.8rem;
+ left: 3.9rem;
+}
+.DATE{
+ display: flex;
+ position: relative;
+ top: 18rem;
+ left: 35rem;
+}
+#MM, #YY, #card-name, .barra, #CVC {
+ color: var(--White);
+ font-weight: 400;
+ font-size: 1.3rem;
+ letter-spacing: .3rem;
+ text-transform: uppercase;
+}
+
+/*card-end*/
+
+.card-back {
+ left: 25rem;
+ top: 36rem;
+ background-image: url(assets/bg-card-back.png);
+}
+
+#CVC {
+ position: relative;
+ top: 11.2rem;
+ left: 35.5rem;
+}
+
+/*form*/
+
+form {
+ position: absolute;
+ top: 18.9rem;
+ right: 23rem;
+ display: flex;
+ flex-direction: column;
+ gap: .5rem;
+}
+
+.wrapper {
+ display: flex;
+ flex-direction: column;
+ gap: .6rem;
+}
+
+.wrappers {
+ display: flex;
+ align-items: center;
+ gap: 2.3rem;
+}
+
+.MMYY {
+ display: flex;
+ gap: 1rem;
+}
+
+#mm, #yy {
+ width: 7rem;
+}
+#cvc {
+ width: 15rem;
+}
+label {
+ color: var(--Very-dark-violet);
+ font-size: 1.1rem;
+ font-weight: 700;
+ letter-spacing: .1rem;
+ text-transform: uppercase;
+}
+
+input {
+ border: .1rem solid var(--Light-grayish-violet);
+ width: 100%;
+ padding: 1.1rem ;
+ border-radius: .6rem;
+ outline: none;
+ position: relative;
+}
+input:focus {
+ border-color: rgba(100,72,254,1);
+}
+
+input::placeholder {
+ color: var(--Dark-grayish-violet);
+ font-family: 'Space Grotesk', sans-serif;
+ opacity: .5;
+ font-size: 1.4rem;
+ font-weight: 600;
+ letter-spacing: .1rem;
+}
+
+
+button {
+ border: none;
+ background-color: var(--Very-dark-violet);
+ padding: 1.5rem;
+ color: var(--White);
+ letter-spacing: .1rem;
+ font-family: 'Space Grotesk', sans-serif;
+ border-radius: .7rem;
+ margin-top: 2rem;
+ transition: .3s ease-in-out;
+}
+
+button:hover {
+ cursor: pointer;
+ filter: brightness(80%);
+}
+
+/*Complete*/
+
+.Complete {
+ position: absolute;
+ top: 18.9rem;
+ right: 23rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 2.4rem;
+}
+
+.iconComplete {
+ width: 8rem;
+ height: 8rem;
+}
+
+h1 {
+ font-size: 2.6rem;
+ letter-spacing: .3rem;
+ font-weight: 500;
+}
+
+.Complete p {
+ color: var(--Dark-grayish-violet);
+}
+
+#continue {
+ width: 33rem;
+}
+
+
+/*invalid-form*/
+
+#nameError, #numberError, #MMError, #YYError, #CVCError {
+ color: var(--Red-input-errors);
+ font-size: 1.1rem;
+ font-weight: 700;
+}
+
+.pError {
+ opacity: 0;
+}
+
+.error {
+ border-color: var(--Red-input-errors);
+}
+
+
+
+/*MOBILE*/
+
+@media(max-width: 1250px){
+ .page {
+ max-width: 125rem;
+ }
+ .bg-desk {
+ background-image: url(assets/bg-mobile.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 125rem;
+ height: 25rem;
+ top: 0;
+ left: 0;
+ }
+
+ .cards {
+ display: flex;
+ position: relative;
+ max-width: fit-content;
+ left: 10.5rem;
+ 
+ }
+ /*cards*/
+ .card-front, .card-back{
+ box-shadow: none;
+ position: absolute;
+ background-repeat: no-repeat;
+ background-size: contain;
+ width: 35rem;
+ height: 15rem;
+ }
+ .card-front{
+ background-image: url(assets/bg-card-front.png);
+ top: 15rem;
+ left: 3rem;
+ z-index: 2;
+ }
+ .card-back{
+ background-image: url(assets/bg-card-back.png);
+ top: 6.5rem;
+ left: 7rem;
+ }
+ /*card-front*/
+.logo {
+ margin-top: 1.4rem;
+ margin-left: 1.5rem;
+ width: 5rem;
+ height: 2.7rem;
+}
+#card-number {
+ font-size: 1.5rem;
+ font-weight: 400;
+ margin-left: 2rem;
+ letter-spacing: .3rem;
+}
+.ln {
+ gap: 3.5rem;
+}
+#card-name {
+ top: 11rem;
+ left: 2rem;
+}
+.DATE{
+ top: 9.5rem;
+ left: 21rem;
+}
+#MM, #YY, #card-name, .barra, #CVC {
+ font-size: .9rem;
+ letter-spacing: .1rem;
+}
+#CVC {
+ top: 6.8rem;
+ left: 22.5rem;
+}
+
+
+/*form*/
+ form {
+ position: absolute;
+ top: 25rem;
+ left: 50%;
+ transform: translate(-50%, 50%);
+ width: 28rem;
+}
+input {
+ padding: .8rem;
+}
+label {
+ font-size: 1rem;
+}
+input::placeholder {
+ font-size: 1.2rem;
+}
+#cvc {
+ width: 13.5rem;
+}
+#mm, #yy {
+ width: 6rem;
+}
+.wrapper {
+ gap: .5rem;
+}  
+.wrappers {
+ gap: 1rem;
+}  
+.MMYY {
+ gap: 1rem;
+}
+#nameError, #numberError, #MMError, #YYError, #CVCError {
+ font-size: .9rem;
+ font-weight: 500;
+}
+
+/*complete*/
+.Complete {
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 28rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+   }
+   #continue {
+    width: 29rem;
+   }
+   .iconComplete {
+    width: 6rem;
+    height: 6rem;
+   }
+   
+   h1 {
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    font-weight: 500;
+   }
+}
+@media(max-width: 375px){
+ body {
+ max-width: 37.5rem;
+ }
+ .page {
+ max-width: 37.5rem;
+ }
+ .bg-desk {
+ width: 37.5rem;
+ }
+ .cards {
+ left: 0;
+ }
+ .card-front{
+ left: 3;
+ max-width: 30rem;
+ }
+ .card-back {
+ max-width: 30rem;
+ }
+}

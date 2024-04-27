@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" 
+          rel="stylesheet">
+   
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="index.js" defer></script>
+
+    
+    
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Interative Card details</title>
+</head>
+<body>
+    
+
+
+<div class="page">
+
+    <div class="bg-desk">
+
+     <div class="cards">
+      <div class="card-front">
+
+        <div class="ln">
+        <img src="assets/card-logo.svg" alt="" class="logo">
+        <span id="card-number">0000 0000 0000 0000</span>
+        </div>
+
+        <div class="nn">
+            <span id="card-name">Jane Appleseed</span>
+            <div class="DATE">
+                <span id="MM">00</span><p class="barra">/</p><span id="YY">00</span>
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="card-back">
+        <span id="CVC">000</span>
+      </div>
+     </div>
+    </div>
+    
+   
+
+    
+    <form class="">
+        <div class="wrapper">
+          <label for="name"> Cardholder Name</label>
+          <input type="text" id="name" placeholder="e.g. Jane Appleseed"  class="">
+          <p id="nameError" class="pError">Can't be blank</p>
+          
+        </div>
+
+        <div class="wrapper">
+          <label for="number">Card Number</label>
+          <input type="text" autocomplete="off" maxlength="19"  id="number" placeholder="e.g. 1234 5678 9123 0000" class="">
+          <p id="numberError" class="pError">Can't be blank</p>
+        </div>
+
+        <div class="wrappers">
+
+          <div class="wrapper">
+            <label for="mm">Exp. Date (MM/YY)</label>
+            <div class="MMYY">
+           <div class="wrapper"><input type="text" id="mm" placeholder="MM" maxlength="2" class=""><p id="MMError" class="pError">Can't be blank</p></div>
+            <div class="wrapper"><input type="text" id="yy" placeholder="YY" maxlength="2" class=""><p id="YYError" class="pError">Can't be blank</p></div>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <label for="cvc">cvc</label>
+            <input type="text" id="cvc" placeholder="e.g. 123" maxlength="3" class="">
+            <p id="CVCError" class="pError">Can't be blank</p>
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn">Confirm</button>
+    </form>
+  
+    <div class="C hide">
+    <div class="Complete ">
+      <img src="assets/icon-complete.svg" alt="" class="iconComplete">
+      <h1>THANK YOU!</h1>
+      <p>We've added your card details</p>
+      <button id="continue">Continue</button>
+    </div>  
+    </div>
+
+
+  
+    
+   
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+<script>
+  $('#name').mask('aaaaaaaaaaaaaaaaaaaaaaa', {
+    translation: {
+      'a': { pattern: /^[a-zA-Z\s]+$/ }
+    }
+  });
+  $('#number').mask("9999 9999 9999 9999", {
+    translation: {
+      '9': { pattern: /^\d+$/}
+    }
+  });
+  $('#mm').mask("99");
+  $('#yy').mask("99");
+  $('#cvc').mask("999");
+  </script>
+</body>
+</html>
