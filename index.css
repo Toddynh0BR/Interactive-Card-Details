@@ -385,6 +385,7 @@ input::placeholder {
     font-weight: 500;
    }
 }
+
 @media(max-width: 375px){
  body {
  max-width: 37.5rem;
@@ -404,5 +405,12 @@ input::placeholder {
  }
  .card-back {
  max-width: 30rem;
+ }
+}
+
+@media (max-width: 430px){
+ .cards {
+ left: -0.5rem;
+
  }
 }
